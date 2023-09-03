@@ -11,8 +11,11 @@ public class Cesped {
 	 int Humedad;
 	 int Extension;
 
-	public void crecerCesped() {
+	public void crecer() {
 		alturaCesped += (int)(Math.random()*3);
-		////Util.report("EL cesped crecio a" + alturaArbol + "cm");
+	}
+	
+	public void cortar() {
+		alturaCesped = 0;
 	}
 }

@@ -15,16 +15,13 @@ public class Arbol {
 	String[] Tipo = {"Pino","Roble","Palmera","Manzano"};
 	
 	
-	public void crecerArbol() {
-		
+	public void crecer() {
 		alturaArbol += (int)(Math.random()*3);
-		Util.report("EL arbol crecio a" + alturaArbol + "cm");
 	}
 		
 	
 	public void darFruto() {
 		cantidadFruto += (int)(Math.random()*3);
-		Util.report("EL arbol tiene" + cantidadFruto + "frutos");	
 	}
 
 }
