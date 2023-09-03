@@ -4,10 +4,15 @@ import java.awt.Color;
 import Control.Main;
 
 public class Util {
-	public static void report(String s, Color pColor, String pArea, int pProblema) {
-		System.out.println(s + " en " + pArea);
+	public static void report(String pProblema, Color pColor, String pArea, int pIndex) {
 		
-		switch(pProblema) {
+		String aviso = "====================\n"+
+						"HORA\n" +
+						pArea + " - " + pProblema;
+		
+		System.out.println(pProblema + " en " + pArea);
+		
+		switch(pIndex) {
 			case 1:
 				
 			case 2:
@@ -15,13 +20,17 @@ public class Util {
 			case 3:
 
 			case 4:
-				
+				Main.frame.AsignarEstado(7, pColor, false, aviso);
+				break;
 			case 5:
-
+				Main.frame.AsignarEstado(8, pColor, false, aviso);
+				break;
 			case 6:
-
+				Main.frame.AsignarEstado(7, pColor, false, aviso);
+				break;
 			case 7:
-
+				Main.frame.AsignarEstado(7, pColor, false, aviso);
+				break;
 			case 8:
 
 			case 9:

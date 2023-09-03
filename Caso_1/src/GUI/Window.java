@@ -18,11 +18,34 @@ import Soporte.Action;
 
 public class Window extends JFrame {
 	
-	// 
-	private JPanel[] paneles;
-	private JPanel pnlCuartoPilas;
-	private JPanel pnlBaños;
+	// Lista de JPaneles:
+	/*
+	 0 = pnlCuartoPilas
+	 1 = pnlBaños
+	 2 = pnlCuartos
+	 3 = pnlSala
+	 4 = pnlComedor
+	 5 = pnlCochera
+	 6 = pnlCocina
+	 7 = pnlSueloPatio
+	 8 = pnlCesped
+	 9 = pnlArbol
+	 10 = pnlPlanta
+	 */
+	private JPanel[] paneles = new JPanel[11];
 	
+	//Lista de JLabels de Dispositivos
+	/*
+	 0 = lblLavadora
+	 1 = lblTrapeador
+	 2 = lblAspiradora
+	 3 = lblMicroondas
+	 4 = lblRefrigeradora
+	 5 = lblGenerador
+	 6 = lblModem
+	 7 = lblTelefono
+	 */
+	private JLabel[] lbldispositivos = new JLabel[8];
 	
 	private JTextArea textArea;
 	private JButton button2;
@@ -51,13 +74,18 @@ public class Window extends JFrame {
         getContentPane().add(pPanel);
 	}
 	
-	public void cambiarColor() {
-		
+	public void AsignarEstado(int pIndex, Color pColor, Boolean pEsDispositivo, String pProblema) {
+		if(pEsDispositivo == true) {
+			lbldispositivos[pIndex].setBackground(pColor);
+		}else {
+			paneles[pIndex].setBackground(pColor);
+		}
+		textArea.setText(pProblema);
 	}
 	
 	public Window() {
 		setTitle("Casa #1");
-        setSize(800, 900); // Set the desired size
+        setSize(780, 900); // Set the desired size
         setResizable(false); // Disable frame resizing
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -75,126 +103,135 @@ public class Window extends JFrame {
         
         // Genera panel y label de cuarto de pilas.
         
-        pnlCuartoPilas = new JPanel();
-        Colocar_panel(pnlCuartoPilas, 160, 300, 300, 100, color_casa);
+        paneles[0] = new JPanel();
+        Colocar_panel(paneles[0], 160, 300, 300, 100, color_casa);
         
         JLabel lblCuartoPilas = new JLabel("Cuarto de pilas");
-        Colocar_label(lblCuartoPilas, pnlCuartoPilas, 75, 35, 150, 30, false, Color.white, 18, false);
+        Colocar_label(lblCuartoPilas, paneles[0], 75, 35, 150, 30, false, Color.white, 18, false);
         
         // Genera panel y label de baños.
         
-        pnlBaños = new JPanel();
-        Colocar_panel(pnlBaños, 470, 300, 80, 100, color_casa);
+        paneles[1] = new JPanel();
+        Colocar_panel(paneles[1], 470, 300, 80, 100, color_casa);
         
         JLabel lblBaños = new JLabel("Baños");
-        Colocar_label(lblBaños, pnlBaños, 10, 35, 60, 30, false, Color.white, 18, false);
+        Colocar_label(lblBaños, paneles[1], 10, 35, 60, 30, false, Color.white, 18, false);
         
         // Genera panel y label de cuartos.
         
-        JPanel pnlCuartos = new JPanel();
-        Colocar_panel(pnlCuartos, 560, 300, 200, 300, color_casa);
+        paneles[2] = new JPanel();
+        Colocar_panel(paneles[2], 560, 300, 200, 300, color_casa);
         
         JLabel lblCuartos = new JLabel("Cuartos");
-        Colocar_label(lblCuartos, pnlCuartos, 60, 130, 80, 30, false, Color.white, 18, false);
+        Colocar_label(lblCuartos, paneles[2], 60, 130, 80, 30, false, Color.white, 18, false);
         
         // Genera panel y label de sala.
         
-        JPanel pnlSala = new JPanel();
-        Colocar_panel(pnlSala, 350, 610, 410, 200, color_casa);
+        paneles[3] = new JPanel();
+        Colocar_panel(paneles[3], 350, 610, 410, 200, color_casa);
         
         JLabel lblSala = new JLabel("Sala");
-        Colocar_label(lblSala, pnlSala, 170, 85, 80, 30, false, Color.white, 18, false);
+        Colocar_label(lblSala, paneles[3], 170, 85, 80, 30, false, Color.white, 18, false);
         
         // Genera panel y label de comedor.
         
-        JPanel pnlComedor = new JPanel();
-        Colocar_panel(pnlComedor, 350, 410, 200, 190, color_casa);
+        paneles[4] = new JPanel();
+        Colocar_panel(paneles[4], 350, 410, 200, 190, color_casa);
         
         JLabel lblComedor = new JLabel("Comedor");
-        Colocar_label(lblComedor, pnlComedor, 55, 75, 90, 30, false, Color.white, 18, false);
+        Colocar_label(lblComedor, paneles[4], 55, 75, 90, 30, false, Color.white, 18, false);
         
         // Genera panel y label de cochera.
         
-        JPanel pnlCochera = new JPanel();
-        Colocar_panel(pnlCochera, 160, 560, 180, 220, color_casa);
+        paneles[5] = new JPanel();
+        Colocar_panel(paneles[5], 160, 560, 180, 220, color_casa);
         
         JLabel lblCochera = new JLabel("Cochera");
-        Colocar_label(lblCochera, pnlCochera, 45, 105, 90, 30, false, Color.white, 18, false);
+        Colocar_label(lblCochera, paneles[5], 45, 105, 90, 30, false, Color.white, 18, false);
         
         // Genera panel y label de cocina.
         
-        JPanel pnlCocina = new JPanel();
-        Colocar_panel(pnlCocina, 160, 410, 180, 140, color_casa);
+        paneles[6] = new JPanel();
+        Colocar_panel(paneles[6], 160, 410, 180, 140, color_casa);
         
         JLabel lblCocina = new JLabel("Cocina");
-        Colocar_label(lblCocina, pnlCocina, 45, 55, 90, 30, false, Color.white, 18, false);
+        Colocar_label(lblCocina, paneles[6], 45, 55, 90, 30, false, Color.white, 18, false);
         
         // Patio ===========================================================================
         
         // Genera panel y label del suelo del patio.
         
-        JPanel pnlSueloPatio = new JPanel();
-        Colocar_panel(pnlSueloPatio, 350, 90, 410, 200, color_suelo);
+        paneles[7] = new JPanel();
+        Colocar_panel(paneles[7], 350, 90, 410, 200, color_suelo);
         
         JLabel lblSueloPatio = new JLabel("Suelo");
-        Colocar_label(lblSueloPatio, pnlSueloPatio, 160, 80, 90, 30, false, Color.white, 18, false);
+        Colocar_label(lblSueloPatio, paneles[7], 160, 80, 90, 30, false, Color.white, 18, false);
         
         // Genera panel y label del cesped.
         
-        JPanel pnlCesped = new JPanel();
-        Colocar_panel(pnlCesped, 240, 190, 100, 100, color_verde);
+        paneles[8] = new JPanel();
+        Colocar_panel(paneles[8], 240, 190, 100, 100, color_verde);
         
         JLabel lblCesped = new JLabel("Cesped");
-        Colocar_label(lblCesped, pnlCesped, 15, 35, 70, 30, false, Color.white, 18, false);
+        Colocar_label(lblCesped, paneles[8], 15, 35, 70, 30, false, Color.white, 18, false);
         
         // Genera panel y label del arbol.
         
-        JPanel pnlArbol = new JPanel();
-        Colocar_panel(pnlArbol, 130, 80, 100, 100, color_verde);
+        paneles[9] = new JPanel();
+        Colocar_panel(paneles[9], 130, 80, 100, 100, color_verde);
         
         JLabel lblArbol = new JLabel("Árbol");
-        Colocar_label(lblArbol, pnlArbol, 15, 35, 70, 30, false, Color.white, 18, false);
+        Colocar_label(lblArbol, paneles[9], 15, 35, 70, 30, false, Color.white, 18, false);
         
         // Genera panel y label del planta.
         
-        JPanel pnlPlanta = new JPanel();
-        Colocar_panel(pnlPlanta, 20, 190, 100, 100, color_verde);
+        paneles[10] = new JPanel();
+        Colocar_panel(paneles[10], 20, 190, 100, 100, color_verde);
         
         JLabel lblPlanta = new JLabel("Planta");
-        Colocar_label(lblPlanta, pnlPlanta, 15, 35, 70, 30, false, Color.white, 18, false);
+        Colocar_label(lblPlanta, paneles[10], 15, 35, 70, 30, false, Color.white, 18, false);
         
         // Dispositivos ===================================================================
         
-        JLabel lblLavadora = new JLabel("Lavadora");
-        Colocar_label(lblLavadora, pnlCuartoPilas, 10, 15, 65, 25, true, Color.white, 12, true);
+        lbldispositivos[0] = new JLabel("Lavadora");
+        Colocar_label(lbldispositivos[0], paneles[0], 10, 15, 65, 25, true, Color.white, 12, true);
 
-        JLabel lblTrapeador = new JLabel("Trapeador");
-        Colocar_label(lblTrapeador, pnlCuartoPilas, 10, 55, 65, 25, true, Color.white, 12, true);
+        lbldispositivos[1] = new JLabel("Trapeador");
+        Colocar_label(lbldispositivos[1], paneles[0], 10, 55, 65, 25, true, Color.white, 12, true);
         
-        JLabel lblAspiradora = new JLabel("Aspiradora");
-        Colocar_label(lblAspiradora, pnlCuartoPilas, 220, 15, 70, 25, true, Color.white, 12, true);
+        lbldispositivos[2] = new JLabel("Aspiradora");
+        Colocar_label(lbldispositivos[2], paneles[0], 220, 15, 70, 25, true, Color.white, 12, true);
 
-        JLabel lblMicroondas = new JLabel("Microondas");
-        Colocar_label(lblMicroondas, pnlCocina, 10, 15, 75, 25, true, Color.white, 12, true);
+        lbldispositivos[3] = new JLabel("Microondas");
+        Colocar_label(lbldispositivos[3], paneles[6], 10, 15, 75, 25, true, Color.white, 12, true);
         
-        JLabel lblRefrigeradora = new JLabel("Refrigeradora");
-        Colocar_label(lblRefrigeradora, pnlCocina, 10, 105, 90, 25, true, Color.white, 12, true);
+        lbldispositivos[4] = new JLabel("Refrigeradora");
+        Colocar_label(lbldispositivos[4], paneles[6], 10, 105, 90, 25, true, Color.white, 12, true);
         
-        JLabel lblGenerador = new JLabel("Generador");
-        Colocar_label(lblGenerador, pnlCochera, 10, 15, 75, 25, true, Color.white, 12, true);
+        lbldispositivos[5] = new JLabel("Generador");
+        Colocar_label(lbldispositivos[5], paneles[5], 10, 15, 75, 25, true, Color.white, 12, true);
         
-        JLabel lblModem = new JLabel("Modem");
-        Colocar_label(lblModem, pnlSala, 10, 15, 75, 25, true, Color.white, 12, true);
+        lbldispositivos[6] = new JLabel("Modem");
+        Colocar_label(lbldispositivos[6], paneles[3], 10, 15, 75, 25, true, Color.white, 12, true);
         
-        JLabel lblTelefono = new JLabel("Teléfono");
-        Colocar_label(lblTelefono, pnlSala, 10, 160, 75, 25, true, Color.white, 12, true);
+        lbldispositivos[7] = new JLabel("Teléfono");
+        Colocar_label(lbldispositivos[7], paneles[3], 10, 160, 75, 25, true, Color.white, 12, true);
+        
+        JLabel label2 = new JLabel("Estado");
+        Colocar_label(label2, null, 10, 160, 75, 25, true, Color.white, 12, true);
+
+        label2.setBounds(5, 300, 150, 25);
+        getContentPane().add(label2);
         
         
         textArea = new JTextArea();
         textArea.setLineWrap(true); // Enable line wrapping
         textArea.setWrapStyleWord(true); // Wrap at word boundaries
+        textArea.setEditable(false);
+        textArea.setFocusable(false);
+        textArea.setBorder(borde);
 
-        Rectangle textAreaBounds = new Rectangle(10, 790, 150, 30);
+        Rectangle textAreaBounds = new Rectangle(5, 330, 150, 450);
         textArea.setBounds(textAreaBounds);
         
         // Add text area to the frame's content pane
@@ -214,16 +251,11 @@ public class Window extends JFrame {
         // Set null layout
 
         // Add onClick event listeners to the buttons
-        button1.addActionListener(e -> decirHola());
         button2.addActionListener(e -> decirAdios());
         
         setLocationRelativeTo(null);
     }
 	
-	
-	private void decirHola() {
-		textArea.setText("aqui va mi mensaje");
-	}
 	
 	private void decirAdios() {
 		button2.setBackground(Color.CYAN);

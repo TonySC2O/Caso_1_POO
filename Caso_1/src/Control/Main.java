@@ -15,7 +15,7 @@ public static void main(String args[]) {
 		SwingUtilities.invokeLater(() -> {
 	        frame.setVisible(true);
 	        TaskPatio tareasPatio = new TaskPatio();
-	        tareasPatio.execute(Action.mandarPlagas);
+	        tareasPatio.execute(Action.humedecerSuelo);
 	        
 	    });
 	}
