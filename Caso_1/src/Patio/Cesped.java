@@ -1,12 +1,18 @@
 package Patio;
 
+import java.awt.Color;
+
+import Control.Main;
+import Soporte.Util;
+
 public class Cesped {
 	
-	private int Altura;
-	private int Humedad;
-	private int Extension;
+	 int alturaCesped;
+	 int Humedad;
+	 int Extension;
 
-	public void crecer() {
-		
+	public void crecerCesped() {
+		alturaCesped += (int)(Math.random()*3);
+		////Util.report("EL cesped crecio a" + alturaArbol + "cm");
 	}
 }
