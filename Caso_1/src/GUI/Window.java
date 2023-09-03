@@ -13,9 +13,20 @@ import javax.swing.border.MatteBorder;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+import Patio.TaskPatio;
+import Soporte.Action;
+
 public class Window extends JFrame {
+	
+	// 
+	private JPanel[] paneles;
+	private JPanel pnlCuartoPilas;
+	private JPanel pnlBaños;
+	
+	
 	private JTextArea textArea;
 	private JButton button2;
+	
 	private Color color_verde = new Color(0,160,50);
 	private Color color_suelo = new Color(170,115,30);
 	private Color color_casa = new Color(200,250,230);
@@ -40,6 +51,10 @@ public class Window extends JFrame {
         getContentPane().add(pPanel);
 	}
 	
+	public void cambiarColor() {
+		
+	}
+	
 	public Window() {
 		setTitle("Casa #1");
         setSize(800, 900); // Set the desired size
@@ -60,7 +75,7 @@ public class Window extends JFrame {
         
         // Genera panel y label de cuarto de pilas.
         
-        JPanel pnlCuartoPilas = new JPanel();
+        pnlCuartoPilas = new JPanel();
         Colocar_panel(pnlCuartoPilas, 160, 300, 300, 100, color_casa);
         
         JLabel lblCuartoPilas = new JLabel("Cuarto de pilas");
@@ -68,7 +83,7 @@ public class Window extends JFrame {
         
         // Genera panel y label de baños.
         
-        JPanel pnlBaños = new JPanel();
+        pnlBaños = new JPanel();
         Colocar_panel(pnlBaños, 470, 300, 80, 100, color_casa);
         
         JLabel lblBaños = new JLabel("Baños");
@@ -205,12 +220,6 @@ public class Window extends JFrame {
         setLocationRelativeTo(null);
     }
 	
-	public static void main(String args[]) {
-		SwingUtilities.invokeLater(() -> {
-			Window frame = new Window();
-	        frame.setVisible(true);
-	    });
-	}
 	
 	private void decirHola() {
 		textArea.setText("aqui va mi mensaje");
