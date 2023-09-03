@@ -15,6 +15,7 @@ import javax.swing.SwingUtilities;
 
 import Patio.TaskPatio;
 import Soporte.Action;
+import Control.Main;
 
 public class Window extends JFrame {
 	
@@ -50,12 +51,9 @@ public class Window extends JFrame {
 	private JTextArea textArea;
 	private JButton button2;
 	
-	private Color color_verde = new Color(0,160,50);
-	private Color color_suelo = new Color(170,115,30);
-	private Color color_casa = new Color(200,250,230);
 	private MatteBorder borde = new MatteBorder(2, 2, 2, 2, Color.BLACK);
 	
-	private void Colocar_label(JLabel pLabel, JPanel pPanel, int x, int y, int h, int w, Boolean pOpacity, Color pFondo, int pTamaño, Boolean pBorde) {
+	private void Colocar_label(JLabel pLabel, JPanel pPanel, int x, int y, int h, int w, boolean pOpacity, Color pFondo, int pTamaño, boolean pBorde) {
 		pLabel.setFont(new Font("Arial", Font.BOLD, pTamaño)); // Set font and sizO
 		pLabel.setForeground(Color.black); // Set text color
 		pLabel.setBackground(pFondo); // Set text color
@@ -74,7 +72,7 @@ public class Window extends JFrame {
         getContentPane().add(pPanel);
 	}
 	
-	public void AsignarEstado(int pIndex, Color pColor, Boolean pEsDispositivo, String pProblema) {
+	public void AsignarEstado(int pIndex, Color pColor, boolean pEsDispositivo, String pProblema) {
 		if(pEsDispositivo == true) {
 			lbldispositivos[pIndex].setBackground(pColor);
 		}else {
@@ -104,7 +102,7 @@ public class Window extends JFrame {
         // Genera panel y label de cuarto de pilas.
         
         paneles[0] = new JPanel();
-        Colocar_panel(paneles[0], 160, 300, 300, 100, color_casa);
+        Colocar_panel(paneles[0], 160, 300, 300, 100, Main.color_casa);
         
         JLabel lblCuartoPilas = new JLabel("Cuarto de pilas");
         Colocar_label(lblCuartoPilas, paneles[0], 75, 35, 150, 30, false, Color.white, 18, false);
@@ -112,7 +110,7 @@ public class Window extends JFrame {
         // Genera panel y label de baños.
         
         paneles[1] = new JPanel();
-        Colocar_panel(paneles[1], 470, 300, 80, 100, color_casa);
+        Colocar_panel(paneles[1], 470, 300, 80, 100, Main.color_casa);
         
         JLabel lblBaños = new JLabel("Baños");
         Colocar_label(lblBaños, paneles[1], 10, 35, 60, 30, false, Color.white, 18, false);
@@ -120,7 +118,7 @@ public class Window extends JFrame {
         // Genera panel y label de cuartos.
         
         paneles[2] = new JPanel();
-        Colocar_panel(paneles[2], 560, 300, 200, 300, color_casa);
+        Colocar_panel(paneles[2], 560, 300, 200, 300, Main.color_casa);
         
         JLabel lblCuartos = new JLabel("Cuartos");
         Colocar_label(lblCuartos, paneles[2], 60, 130, 80, 30, false, Color.white, 18, false);
@@ -128,7 +126,7 @@ public class Window extends JFrame {
         // Genera panel y label de sala.
         
         paneles[3] = new JPanel();
-        Colocar_panel(paneles[3], 350, 610, 410, 200, color_casa);
+        Colocar_panel(paneles[3], 350, 610, 410, 200, Main.color_casa);
         
         JLabel lblSala = new JLabel("Sala");
         Colocar_label(lblSala, paneles[3], 170, 85, 80, 30, false, Color.white, 18, false);
@@ -136,7 +134,7 @@ public class Window extends JFrame {
         // Genera panel y label de comedor.
         
         paneles[4] = new JPanel();
-        Colocar_panel(paneles[4], 350, 410, 200, 190, color_casa);
+        Colocar_panel(paneles[4], 350, 410, 200, 190, Main.color_casa);
         
         JLabel lblComedor = new JLabel("Comedor");
         Colocar_label(lblComedor, paneles[4], 55, 75, 90, 30, false, Color.white, 18, false);
@@ -144,7 +142,7 @@ public class Window extends JFrame {
         // Genera panel y label de cochera.
         
         paneles[5] = new JPanel();
-        Colocar_panel(paneles[5], 160, 560, 180, 220, color_casa);
+        Colocar_panel(paneles[5], 160, 560, 180, 220, Main.color_casa);
         
         JLabel lblCochera = new JLabel("Cochera");
         Colocar_label(lblCochera, paneles[5], 45, 105, 90, 30, false, Color.white, 18, false);
@@ -152,7 +150,7 @@ public class Window extends JFrame {
         // Genera panel y label de cocina.
         
         paneles[6] = new JPanel();
-        Colocar_panel(paneles[6], 160, 410, 180, 140, color_casa);
+        Colocar_panel(paneles[6], 160, 410, 180, 140, Main.color_casa);
         
         JLabel lblCocina = new JLabel("Cocina");
         Colocar_label(lblCocina, paneles[6], 45, 55, 90, 30, false, Color.white, 18, false);
@@ -162,7 +160,7 @@ public class Window extends JFrame {
         // Genera panel y label del suelo del patio.
         
         paneles[7] = new JPanel();
-        Colocar_panel(paneles[7], 350, 90, 410, 200, color_suelo);
+        Colocar_panel(paneles[7], 350, 90, 410, 200, Main.color_suelo);
         
         JLabel lblSueloPatio = new JLabel("Suelo");
         Colocar_label(lblSueloPatio, paneles[7], 160, 80, 90, 30, false, Color.white, 18, false);
@@ -170,7 +168,7 @@ public class Window extends JFrame {
         // Genera panel y label del cesped.
         
         paneles[8] = new JPanel();
-        Colocar_panel(paneles[8], 240, 190, 100, 100, color_verde);
+        Colocar_panel(paneles[8], 240, 190, 100, 100, Main.color_verde);
         
         JLabel lblCesped = new JLabel("Cesped");
         Colocar_label(lblCesped, paneles[8], 15, 35, 70, 30, false, Color.white, 18, false);
@@ -178,7 +176,7 @@ public class Window extends JFrame {
         // Genera panel y label del arbol.
         
         paneles[9] = new JPanel();
-        Colocar_panel(paneles[9], 130, 80, 100, 100, color_verde);
+        Colocar_panel(paneles[9], 130, 80, 100, 100, Main.color_verde);
         
         JLabel lblArbol = new JLabel("Árbol");
         Colocar_label(lblArbol, paneles[9], 15, 35, 70, 30, false, Color.white, 18, false);
@@ -186,7 +184,7 @@ public class Window extends JFrame {
         // Genera panel y label del planta.
         
         paneles[10] = new JPanel();
-        Colocar_panel(paneles[10], 20, 190, 100, 100, color_verde);
+        Colocar_panel(paneles[10], 20, 190, 100, 100, Main.color_verde);
         
         JLabel lblPlanta = new JLabel("Planta");
         Colocar_label(lblPlanta, paneles[10], 15, 35, 70, 30, false, Color.white, 18, false);

@@ -6,7 +6,7 @@ import Soporte.Action;
 
 public class TaskPatio implements ITask {
 	
-	ManagerControlPatio manager = new ManagerControlPatio();
+	ManagerPatio manager = new ManagerPatio();
 	String[] plagas = {"Saltamontes", "Osos", "Serpientes", "Gusanos", "Mapaches", "Coyotes"};
 	
 	@Override
@@ -22,6 +22,9 @@ public class TaskPatio implements ITask {
 		}
 		if (pAction==Action.mandarPlagas) {
 			manager.mandarPlagas(plagas[(int) (Math.random()*5)]);
+		}
+		if (pAction==Action.eliminarPlaga) {
+			manager.eliminarPlagas();
 		}
 	}
 }
