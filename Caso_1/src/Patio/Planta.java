@@ -11,13 +11,13 @@ public class Planta {
 	int Frutos;
 	
 	public void florecer() {
-		Flores =+ (int)(Math.random()*5)
-		Util.report("La planta ha florecido", Color.green, "Patio", 10, true);
+		Flores =+ (int)(Math.random()*5);
+		Util.report("La planta ha florecido " + Flores + " flores", Color.green, "Patio", 10, true);
 	}
 	
 	public void darFruto() {
-		Frutos =+ (int)(Math.random()*5)
-		Util.report("La planta ha producido frutos", Color.cyan, "Patio", 10, true);
+		Frutos =+ (int)(Math.random()*5);
+		Util.report("La planta ha producido " + Frutos + " frutos", Color.cyan, "Patio", 10, true);
 	}
 	
 	

@@ -1,11 +1,13 @@
-package ElementosDeHabitaciones;
+package Habitaciones;
 
-public class ventana {
+
+
+public class Puerta {
 	private boolean estado;
 	private int altura;
 	private int ancho;
 	
-	public int[] crearVentana(int pAltura, int pAncho) {
+	public int[] crearPuerta(int pAltura, int pAncho) {
 		altura = pAltura;
 		ancho = pAncho;
 		return new int[] {altura, ancho};
@@ -13,15 +15,16 @@ public class ventana {
 	
 	
 	public boolean abrirse(boolean pEstado) {
-		this.estado = pEstado;
-		System.out.println("Ventana abierta");
+		estado = pEstado;
+		System.out.println("Puerta abierta");
 		return estado;
 		
 	}
 	
 	public boolean cerrarse(boolean pEstado) {
 		this.estado = pEstado;
-		System.out.println("Ventana cerrada");
-		return estado;		
+		System.out.println("Puerta cerrada");
+		return estado;
+		
 	}
 }

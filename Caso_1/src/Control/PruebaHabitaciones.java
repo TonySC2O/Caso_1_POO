@@ -3,15 +3,15 @@ package Control;
 public class PruebaHabitaciones extends Prueba{
     public    
 
-        void ensuciarHabitacion(habitacion){
+        void ensuciarHabitacion(int habitacion){
 
         }
 
-        void introducirAgua(entrada, habitacion){
+        void introducirAgua(int entrada, int habitacion){
 
         }
 
-        void taquearTuberias(habitacion){
+        void taquearTuberias(int habitacion){
 
         }
 }

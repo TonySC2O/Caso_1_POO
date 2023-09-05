@@ -8,10 +8,10 @@ public class PruebaDispositivos extends Prueba {
         }
 
         void cortarAgua(int tiempo){
-
+        	
         }
 
-        void desconectar(dispositivo){
+        void desconectar(int dispositivo){
 
         }
 }

@@ -1,7 +1,4 @@
-package Maestro;
-
-
-import ElementosDeHabitaciones.*;
+package Habitaciones;
 
 public class Master {
 	boolean estado = true;

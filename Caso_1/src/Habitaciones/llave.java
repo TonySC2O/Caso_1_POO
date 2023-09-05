@@ -1,4 +1,4 @@
-package ElementosDeHabitaciones;
+package Habitaciones;
 
 public class llave {
 	
