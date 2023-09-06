@@ -15,20 +15,41 @@ public class Main {
 	public static Color color_suelo = new Color(170,115,30);
 	public static Color color_casa = new Color(200,250,230);
 	public static Window frame = new Window();
+	
 
-public static void main(String args[]) {
+    private static PruebaPatio PruebaPatio = new PruebaPatio();
+    private static PruebaDispositivos PruebaDispositivo = new PruebaDispositivos();
+    private static PruebaHabitaciones PruebaHabitacion = new PruebaHabitaciones();
+    private static PruebaAlmacenamiento PruebaAlmacen = new PruebaAlmacenamiento();
+    private static PruebaAtmosfera PruebaAtmosfer = new PruebaAtmosfera();
 	
-	Scheduler myscheduler = new Scheduler();
-	Clock threadControl = new Clock(myscheduler);
+	public static TaskPatio tareasPatio = new TaskPatio();
+
+	public static void main(String[] args) {
+		
+		Scheduler myscheduler = new Scheduler();
+		Clock threadControl = new Clock(myscheduler);
+		
+		SwingUtilities.invokeLater(() -> {
+	        frame.setVisible(true);
+	    	threadControl.start();
+	    });
+		
+	}
 	
-	SwingUtilities.invokeLater(() -> {
-        frame.setVisible(true);
-        TaskPatio tareasPatio = new TaskPatio();
-	    tareasPatio.execute(Action.mandarPlagas);
-    	threadControl.start();
-        
-    });
-	
-}
+	public static void doTask(String pTask, String pSector, boolean pEsControl) {
+		switch(pSector) {
+		case "Patio":
+			if(pEsControl) {PruebaPatio.hacerPrueba(pTask);}
+			else {tareasPatio.execute(Action.valueOf(pTask), false);}
+			break;
+		case "Habitaciones":
+			
+			break;
+		case "Dispositivos":
+			
+			break;
+		}
+	}
 
 }

@@ -8,28 +8,33 @@ public class TaskPatio implements ITask {
 	
 	ManagerPatio manager = new ManagerPatio();
 	
-	
 	@Override
-	public void execute(Action pAction) {
+	public void execute(Action pAction, boolean esControl) {
 		if (pAction==Action.crecerCespedMucho) {
-			manager.crecerCespedMucho();
+			if(esControl) {manager.crecerCespedM();}
+			else {System.out.println("Solo Control puede hacer crecer cesped");}
 		}
 		
 		if (pAction==Action.humedecerSuelo) {
-			manager.humedecerSuelo();
+			if(esControl) {manager.humedecerSuelo();}
+		else {System.out.println("Solo Control puede humedecer el suelo");}
 		}
 		if (pAction==Action.ensuciarPatio) {
-			manager.ensuciarPatio();
+			if(esControl) {manager.ensuciarPatio();}
+		else {System.out.println("Solo Control puede ensuciar el patio");}
 		}
 
 		if (pAction==Action.mandarPlagas) {
-			manager.mandarPlagas();
+			if(esControl) {manager.mandarPlagas(); System.out.println("AJA");}
+		else {System.out.println("Solo Control puede mandar plagas");}
 		}
 		if (pAction==Action.checkPatio) {
-			manager.checkPatio();
+			if(!esControl) {manager.checkPatio();}
+			else {System.out.println("Solo Patio puede hacer un check");}
 		}
 		if (pAction==Action.actPatio) {
-			manager.actPatio();
+			if(!esControl) {manager.actPatio();}
+			else {System.out.println("Solo Patio puede hacer un act");}
 		}
 		
 	}

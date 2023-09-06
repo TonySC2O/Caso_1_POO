@@ -13,13 +13,13 @@ public class Cesped {
 
 	public void crecer() {
 		alturaCesped += (int)(Math.random()*10+1);
-		Util.report("El cesped ha crecido a " + alturaCesped + " cm", Main.color_verde, "Patio", 2, true);
+		Util.report("El cesped ha crecido a " + alturaCesped + " cm", new Color(0, 150, 10), "Patio", 2, true);
 		System.out.println("El cesped ha crecido a " + alturaCesped + " cm");
 	}
 	
 	public void crecerMucho() {
 		alturaCesped += 30;
-		Util.report("El cesped ha crecido a " + alturaCesped + " cm", Color.red, "Patio", 2, true);
+		Util.report("El cesped ha crecido a " + alturaCesped + " cm", Color.green, "Patio", 2, true);
 		System.out.println("El cesped ha crecido a " + alturaCesped + " cm");
 	}
 	

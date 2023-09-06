@@ -20,10 +20,6 @@ public class ManagerControlPatio {
 		ManagerPatio.humedecerSueloM();
 	}
 	
-	public void crecerCespedMucho(){
-		ManagerPatio.crecerCespedM();
-	}
-	
 	public void mandarPlagas() {
 		tipo_plaga = str_plagas[(int) (Math.random()*5)];
 		Util.report("Ha aparecido una plaga de " + tipo_plaga, Color.red, "Patio", 1, true);
@@ -32,7 +28,7 @@ public class ManagerControlPatio {
 	}
 	
 	public void ensuciarPatio() {
-		Util.report("Se ha ensuciado el patio", Color.red, "Patio", 1, true);
+		Util.report("Se ha ensuciado el patio", Color.gray, "Patio", 1, true);
 		System.out.println("Se ha ensuciado el patio");
 		sucio = true;
 	}
