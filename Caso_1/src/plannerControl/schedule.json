@@ -1,0 +1,34 @@
+{
+	"tareas" : [
+		{
+			"task": "Ensuciar habitación",
+			"time": "07:00",
+			"caso": 1,
+			"sector": "SectorControl"
+		},
+		{
+			"task": "Generar plaga",
+			"time": "06:20",
+			"caso": 4,
+			"sector": "SectorControl"
+		},
+		{
+			"task": "Cortar agua",
+			"time": "07:30",
+			"caso": 9,
+			"sector": "SectorControl"
+		},
+		{
+			"task": "Acabar pesticida",
+			"time": "11:29",
+			"caso": 13,
+			"sector": "SectorControl"
+		},		
+		{
+			"task": "Crecer cesped",
+			"time": "17:00",
+			"caso": 5,
+			"sector": "SectorControl"
+		}		
+	]
+}
