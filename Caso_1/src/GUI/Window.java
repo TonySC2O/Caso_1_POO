@@ -78,7 +78,7 @@ public class Window extends JFrame {
 		}else {
 			paneles[pIndex].setBackground(pColor);
 		}
-		textArea.setText(pProblema);
+		textArea.setText(textArea.getText() + "\n" + pProblema);
 	}
 	
 	public Window() {

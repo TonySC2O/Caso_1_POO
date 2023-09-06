@@ -4,7 +4,7 @@ public class PruebaAlmacenamiento extends Prueba{
     public
 
         void acabarIngredientesCocina (){
-
+            
         }
 
         void acabarUtenciliosLimpieza(){

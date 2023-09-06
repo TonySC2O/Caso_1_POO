@@ -2,7 +2,7 @@ package Patio;
 
 import java.awt.Color;
 
-import Main.Main;
+import Control.Main;
 import Soporte.Util;
 
 public class ManagerPatio extends ManagerControlPatio{
@@ -76,7 +76,6 @@ public class ManagerPatio extends ManagerControlPatio{
 		cesped.crecer();
 		System.out.println("");
 	}	
-	
 	
 	// Suelo
 	public static void humedecerSueloM(){

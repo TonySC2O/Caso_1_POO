@@ -4,11 +4,12 @@ import java.awt.Color;
 import Control.Main;
 
 public class Util {
+	private static String time;
 	
 	public static void report(String pMensaje, Color pColor, String pArea, int pIndex, boolean pEsProblema) {
 		
 		String aviso = "====================\n"+
-					"HORA\n" +
+					"HORA: " + time + "\n" +
 					pArea + " - " + pMensaje;
 		
 		
@@ -49,6 +50,10 @@ public class Util {
 		}
 			
 		
+	}
+	
+	public static void setTime(String pTime) {
+		time = pTime;
 	}
 
 }

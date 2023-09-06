@@ -1,34 +1,52 @@
 {
 	"tareas" : [
 		{
-			"task": "Ensuciar habitación",
+			"task": "ensuciarPatio",
 			"time": "07:00",
-			"caso": 1,
-			"sector": "SectorControl"
+			"sector": "Patio",
+			"dia": "Lunes",
+			"esControl": true
 		},
 		{
-			"task": "Generar plaga",
+			"task": "mandarPlagas",
 			"time": "06:20",
-			"caso": 4,
-			"sector": "SectorControl"
+			"sector": "Patio",
+			"dia": "Lunes",
+			"esControl": true
 		},
 		{
-			"task": "Cortar agua",
-			"time": "07:30",
-			"caso": 9,
-			"sector": "SectorControl"
+			"task": "crecerCespedMucho",
+			"time": "10:30",
+			"sector": "Patio",
+			"dia": "Lunes",
+			"esControl": true
 		},
 		{
-			"task": "Acabar pesticida",
-			"time": "11:29",
-			"caso": 13,
-			"sector": "SectorControl"
+			"task": "eliminarPlaga",
+			"time": "9:29",
+			"sector": "Patio",
+			"dia": "Lunes",
+			"esControl": true
+		},			
+		{
+			"task": "acabarPesticida",
+			"time": "8:00",
+			"sector": "Patio",
+			"dia": "Lunes",
+			"esControl": true
+		},	
+		{
+			"task": "checkPatio",
+			"time": "8:00",
+			"sector": "Patio",
+			"dia": "Lunes",
+			"esControl": true
 		},		
 		{
-			"task": "Crecer cesped",
-			"time": "17:00",
-			"caso": 5,
-			"sector": "SectorControl"
+			"task": "actPatio",
+			"time": "8:00",
+			"sector": "Patio",
+			"esControl": false
 		}		
 	]
 }

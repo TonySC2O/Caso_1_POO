@@ -4,32 +4,37 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Task {
-	private Date tasktime;
+	private String[] tasktime;
 	private String taskname;
+	private String taskSector;
+	private boolean esControl;
 	private boolean procesada;
 	
-	public Task(String pTasktime, String pTaskName) {
+	public Task(String pTasktime, String pTaskName, String pTaskSector, boolean pEsControl) {
 		this.procesada = false;
-		
+		this.taskSector = pTaskSector;
+		this.esControl = pEsControl;
+		this.tasktime = pTasktime.split(":");
 		this.taskname = pTaskName;
-		
-		String dateString = "2023-08-29 "+pTasktime+":00";
-        String pattern = "yyyy-MM-dd HH:mm:ss";
-        
-        SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
-        try {
-            tasktime = dateFormat.parse(dateString);		
-        } catch (Exception ex) {
-        	System.out.println(ex.getMessage());
-        }
 	}
 	
-	public Date getTasktime() {
-		return tasktime;
+	public int getTaskhour() {
+		return Integer.parseInt(tasktime[0]);
+	}
+	
+	public String getTasktime() {
+		return tasktime[0] + ":" + tasktime[1];
+	}
+	public String getTaskSector() {
+		return taskSector;
 	}
 	
 	public String getTaskname() {
 		return taskname;
+	}
+	
+	public boolean isControl() {
+		return esControl;
 	}
 
 	public boolean isProcesada() {

@@ -1,9 +1,12 @@
 package Horarios;
 
+import java.awt.Desktop.Action;
 import java.util.ArrayList;
 
 import plannerControl.Task;
 import plannerControl.Clock;
+import Control.Main;
+import Soporte.Util;
 
 public abstract class Sector {
 	public ArrayList<String> tasks;
@@ -14,21 +17,21 @@ public abstract class Sector {
 	}
 	
 	public void process(Task pTask) {
+		
 		for(String task : tasks) {
-			
-			if (
-				task.compareTo(pTask.getTaskname())==0 &&
-				!pTask.isProcesada() &&
-				Clock.getSecondsToNow(pTask.getTasktime())<=
-				Clock.getSecondsToNow(Clock.getTime())
-				) 
-			{
-				
-				pTask.setProcesada(true);
-				
-				System.out.println(this.getClass().toString()+" haciedo tarea "+pTask.getTaskname());
+			if (task.compareTo(pTask.getTaskname())==0) {
+				if(!pTask.isProcesada()) {
+					if(pTask.getTaskhour()<=Clock.getTiempo()) 
+					{
+						pTask.setProcesada(true);
+						Util.setTime(pTask.getTasktime());
+						Main.doTask(pTask.getTaskname(), pTask.getTaskSector(), pTask.isControl());
+						break;
+					}
+				}
 			}
 		}
+
 	}
 	
 	protected abstract void loadMyTasks();
