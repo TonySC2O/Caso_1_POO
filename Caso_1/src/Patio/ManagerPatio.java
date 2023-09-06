@@ -77,7 +77,6 @@ public class ManagerPatio extends ManagerControlPatio{
 		System.out.println("");
 	}	
 	
-	
 	// Suelo
 	public static void humedecerSueloM(){
 		suelo.saturar();

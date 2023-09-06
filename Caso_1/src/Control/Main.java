@@ -24,6 +24,8 @@ public class Main {
     private static PruebaAtmosfera PruebaAtmosfer = new PruebaAtmosfera();
 	
 	public static TaskPatio tareasPatio = new TaskPatio();
+	//public static TaskHabitaciones tareasHabitaciones = new TaskHabitaciones();
+	//public static TaskDispositivos tareasDispositivos = new TaskDispositivos();
 
 	public static void main(String[] args) {
 		
@@ -44,10 +46,12 @@ public class Main {
 			else {tareasPatio.execute(Action.valueOf(pTask), false);}
 			break;
 		case "Habitaciones":
-			
+			//if(pEsControl) {PruebaHabitaciones.hacerPrueba(pTask);}
+			//else {tareasHabitaciones.execute(Action.valueOf(pTask), false);}
 			break;
 		case "Dispositivos":
-			
+			//if(pEsControl) {PruebaDispositivos.hacerPrueba(pTask);}
+			//else {tareasDispositivos.execute(Action.valueOf(pTask), false);}
 			break;
 		}
 	}
