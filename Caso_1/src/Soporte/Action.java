@@ -7,4 +7,10 @@ public enum Action {
 	
 	//Acciones de Patio Individual
 	eliminarPlaga
+
+	//Acciones de habitaciones individual
+	limpiarHabitacion
+
+	//Aciones de habitaciones Control
+	ensuciarHabitacion, taquearTuberias, inundar
 }

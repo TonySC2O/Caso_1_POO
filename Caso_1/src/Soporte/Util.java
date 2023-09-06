@@ -14,11 +14,11 @@ public class Util {
 		
 		switch(pIndex) {
 			case 1:
-					
+				Main.frame.AsignarEstado(3, pColor, false, aviso);					
 			case 2:
-		
+				Main.frame.AsignarEstado(0, pColor, false, aviso);
 			case 3:
-		
+				Main.frame.AsignarEstado(1, pColor, false, aviso);
 			case 4:
 				Main.frame.AsignarEstado(7, pColor, false, aviso);
 				break;

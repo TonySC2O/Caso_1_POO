@@ -1,11 +1,17 @@
-package Habitaciones;
+package Maestro;
+
+
+import ElementosDeHabitaciones.*;
+import Soporte.Util;
+import java.awt.Color.*;
 
 public class Master {
 	boolean estado = true;
 	boolean electricidad = true;
 	boolean tuberias = true;
 	int presion;
-	
+	String pMensaje;
+	String pArea;
 	
 	public void abrirPuerta() {
 		estado = true;
@@ -35,9 +41,8 @@ public class Master {
 		
 	}
 	
-	public void encenderLuz(boolean pElectricidad) {
+	public void encenderLuz() {
 		estado = true;
-		electricidad = pElectricidad;
 		bombillo foco = new bombillo();
 		foco.encerderse(estado, electricidad);	
 		
@@ -52,9 +57,8 @@ public class Master {
 	}
 	
 
-	public void abrirLlave(boolean pTuberias) {
+	public void abrirLlave() {
 		estado = true;
-		tuberias = pTuberias;
 		presion = 100;
 		llave llav = new llave();
 		llav.abrirse(estado, presion, tuberias);
@@ -67,5 +71,26 @@ public class Master {
 		llave llav = new llave();
 		llav.cerrarse(estado);
 		
+	}
+	
+	public void limpiarHabitacion() {
+		pMensaje = "Habitacion limpia"
+		pArea = "Habitaciones"
+		Color verde = Color.GREEN;
+		Util.report(pMensaje, verde, pArea, false);
+	}
+	
+	public void destaquear() {
+		pMensaje = "tuberias destaqueadas"
+		pArea = "Habitaciones"
+		Color verde = Color.GREEN;
+		Util.report(pMensaje, verde, pArea, false);
+	}
+	
+	public void sacarAgua() {
+		pMensaje = "Habitacion sin agua"
+		pArea = "Habitaciones"
+		Color verde = Color.GREEN;
+		Util.report(pMensaje, verde, pArea, false );
 	}
 }
