@@ -2,7 +2,7 @@ package Patio;
 
 import java.awt.Color;
 
-import Main.Main;
+import Control.Main;
 import Soporte.Util;
 
 public class Cesped {

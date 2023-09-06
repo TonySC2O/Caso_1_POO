@@ -24,8 +24,6 @@ public class ScheduleParser {
         for (JsonValue taskjson : jsontasks) {
             JsonObject taskobject = (JsonObject) taskjson;
             
-            System.out.println(taskobject.getString("task"));
-            
             Task task = new Task(taskobject.getString("time"), taskobject.getString("task"));
             result.add(task);
         }

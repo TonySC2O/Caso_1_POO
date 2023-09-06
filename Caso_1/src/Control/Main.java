@@ -18,11 +18,14 @@ public class Main {
 
 public static void main(String args[]) {
 	
+	Scheduler myscheduler = new Scheduler();
+	Clock threadControl = new Clock(myscheduler);
 	
 	SwingUtilities.invokeLater(() -> {
         frame.setVisible(true);
         TaskPatio tareasPatio = new TaskPatio();
 	    tareasPatio.execute(Action.mandarPlagas);
+    	threadControl.start();
         
     });
 	

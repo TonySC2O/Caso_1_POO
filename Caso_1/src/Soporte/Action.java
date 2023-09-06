@@ -6,5 +6,5 @@ public enum Action {
 	humedecerSuelo, crecerCespedMucho, mandarPlagas, ensuciarPatio,
 	
 	//Acciones de Patio Individual
-	eliminarPlaga
+	eliminarPlaga, checkPatio, actPatio
 }
