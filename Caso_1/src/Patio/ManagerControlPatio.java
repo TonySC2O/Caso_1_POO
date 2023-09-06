@@ -6,9 +6,9 @@ import Soporte.Util;
 
 public class ManagerControlPatio {
 	
-	String[] str_plagas = {"Saltamontes", "Osos", "Serpientes", "Gusanos", "Mapaches", "Coyotes"};
+	String[] str_plagas = {"Saltamontes", "Hormigas", "Mosquitos", "Gusanos", "Lombrices", "Moscas"};
 	String tipo_plaga = null ;
-	
+
 	//Estados patio
 	
 	boolean plaga = false;
@@ -17,21 +17,23 @@ public class ManagerControlPatio {
 	//Metodos 
 	
 	public void humedecerSuelo() {
-		Util.report("Se ha humedecido el suelo", Color.cyan, "Patio", 7, true);
+		ManagerPatio.humedecerSueloM();
 	}
 	
 	public void crecerCespedMucho(){
-		Util.report("El cesped ha crecido", Color.green, "Patio", 5, true);
+		ManagerPatio.crecerCespedM();
 	}
 	
 	public void mandarPlagas() {
 		tipo_plaga = str_plagas[(int) (Math.random()*5)];
-		Util.report("Ha aparecido una plaga de " + tipo_plaga, new Color(200, 50, 30), "Patio", 4, true);
+		Util.report("Ha aparecido una plaga de " + tipo_plaga, Color.red, "Patio", 1, true);
+		System.out.println("Ha aparecido una plaga de " + tipo_plaga);
 		plaga = true;
 	}
 	
 	public void ensuciarPatio() {
-		Util.report("Se ha ensuciado el patio", Color.gray, "Patio", 6, true);
+		Util.report("Se ha ensuciado el patio", Color.red, "Patio", 1, true);
+		System.out.println("Se ha ensuciado el patio");
 		sucio = true;
 	}
 }

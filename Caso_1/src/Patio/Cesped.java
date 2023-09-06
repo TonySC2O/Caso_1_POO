@@ -2,7 +2,7 @@ package Patio;
 
 import java.awt.Color;
 
-import Control.Main;
+import Main.Main;
 import Soporte.Util;
 
 public class Cesped {
@@ -12,10 +12,24 @@ public class Cesped {
 	 int Extension;
 
 	public void crecer() {
-		alturaCesped += (int)(Math.random()*3);
+		alturaCesped += (int)(Math.random()*10+1);
+		Util.report("El cesped ha crecido a " + alturaCesped + " cm", Main.color_verde, "Patio", 2, true);
+		System.out.println("El cesped ha crecido a " + alturaCesped + " cm");
+	}
+	
+	public void crecerMucho() {
+		alturaCesped += 30;
+		Util.report("El cesped ha crecido a " + alturaCesped + " cm", Color.red, "Patio", 2, true);
+		System.out.println("El cesped ha crecido a " + alturaCesped + " cm");
 	}
 	
 	public void cortar() {
 		alturaCesped = 0;
+		Util.report("El cesped ha sido cortado",  Main.color_verde, "Patio", 2, true);
+		System.out.println("El cesped ha sido cortado");
+	}
+	
+	public int altura() {
+		return alturaCesped;
 	}
 }
