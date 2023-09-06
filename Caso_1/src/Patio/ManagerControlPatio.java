@@ -6,8 +6,6 @@ import Soporte.Util;
 
 public class ManagerControlPatio {
 	
-	ManagerPatio managerPatio = new ManagerPatio();
-	
 	String[] str_plagas = {"Saltamontes", "Osos", "Serpientes", "Gusanos", "Mapaches", "Coyotes"};
 	String tipo_plaga = null ;
 	
@@ -23,7 +21,6 @@ public class ManagerControlPatio {
 	}
 	
 	public void crecerCespedMucho(){
-		managerPatio.crecerCesped();
 		Util.report("El cesped ha crecido", Color.green, "Patio", 5, true);
 	}
 	
