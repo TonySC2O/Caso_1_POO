@@ -25,7 +25,7 @@ public class TaskPatio implements ITask {
 		}
 
 		if (pAction==Action.mandarPlagas) {
-			if(esControl) {manager.mandarPlagas(); System.out.println("AJA");}
+			if(esControl) {manager.mandarPlagas();}
 		else {System.out.println("Solo Control puede mandar plagas");}
 		}
 		if (pAction==Action.checkPatio) {
