@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import plannerControl.Task;
 import plannerControl.Clock;
 import Control.Main;
+import Soporte.Util;
 
 public abstract class Sector {
 	public ArrayList<String> tasks;
@@ -22,8 +23,8 @@ public abstract class Sector {
 				if(!pTask.isProcesada()) {
 					if(pTask.getTaskhour()<=Clock.getTiempo()) 
 					{
-						System.out.println("Si");
 						pTask.setProcesada(true);
+						Util.setTime(pTask.getTasktime());
 						Main.doTask(pTask.getTaskname(), pTask.getTaskSector(), pTask.isControl());
 						break;
 					}

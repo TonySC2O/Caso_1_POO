@@ -32,7 +32,7 @@ public class ScheduleParser {
 	}	
 	
 	private void loadJson() {
-		String pathtofile = "Caso_1\\src\\plannerControl\\schedule.json";
+		String pathtofile = "C:\\Users\\Tony\\Desktop\\Archivos POO 2023\\Caso_1\\Caso_1_POO\\Caso_1\\src\\plannerControl\\schedule.json";
         
 		try ( JsonReader reader = Json.createReader(new FileReader(pathtofile))) {
             JsonObject jsonparser = reader.readObject();
